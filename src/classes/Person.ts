@@ -8,16 +8,26 @@ export class Person {
 	}
 
 	compareAge(other: Person): void {
-		if(other.age > this.age) {
+        // If other is younger
+		if(!this.otherIsOlder(other)) {
 			console.log(other.name + " is younger than me.");
 		}
-		else if(other.age < this.age) {
+        // if other is older
+		else if(!this.otherIsYounger(other)) {
 			console.log(other.name + " is older than me.");
 		}
 		else {
 			console.log(other.name + " is the same age as me.");
 		}
 	}
+
+    otherIsOlder(other: Person): boolean {
+        return other.age < this.age;
+    }
+
+    otherIsYounger(other: Person): boolean {
+        return other.age > this.age;
+    }
 }
 
 export function main() {
