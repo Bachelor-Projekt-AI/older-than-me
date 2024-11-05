@@ -22,11 +22,11 @@ export class Person {
 	}
 
     otherIsOlder(other: Person): boolean {
-        return other.age < this.age;
+        return other.age > this.age;
     }
 
     otherIsYounger(other: Person): boolean {
-        return other.age > this.age;
+        return other.age < this.age;
     }
 }
 
